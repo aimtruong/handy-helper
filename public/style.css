@@ -1,0 +1,18 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.login-instead {
+    padding-left: 60px;
+    padding-right: 5px;
+}
