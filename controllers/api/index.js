@@ -3,7 +3,6 @@ const router = require("express").Router();
 
 // routes for users
 const userRoutes = require("./user-routes.js");
-const profileRoutes = require("./profile-routes.js");
 const handymanRoutes = require("./handyman-routes.js");
 
 // routes for users inputs
@@ -12,7 +11,6 @@ const reviewRoutes = require("./review-routes.js");
 
 
 router.use("/users", userRoutes);
-router.use("/profile", profileRoutes);
 router.use("/handymans", handymanRoutes);
 
 router.use("/messages", messagesRoutes);

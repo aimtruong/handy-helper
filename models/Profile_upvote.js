@@ -18,13 +18,15 @@ Profile_upvote.init(
                 key: 'id'
             }
         },
-        profile_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'handyman',
-                key: 'id'
-            }
-        }
+        // does this relate to handyman by upvoting the 
+        // handyman since we don't have a profile model?
+        //profile_id: {
+        //    type: DataTypes.INTEGER,
+        //    references: {
+        //        model: 'handyman',
+        //        key: 'id'
+        //    }
+        //}
     },
     {
         sequelize,

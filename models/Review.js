@@ -22,10 +22,10 @@ Review.init(
                 len: [1]
             }
         },
-        user_id: {
+        customer_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'customer',
                 key: 'id'
             }
         }
