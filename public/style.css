@@ -1,8 +1,32 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    background-color: rgb(223, 223, 223);
+    padding: 0 30px;
+    margin-bottom: 50px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+header nav ul li a {
+    padding: 10px 15px;
+    font-weight: 200;
+    font-size: 1.4vw;
 }
 
 .hero {
@@ -15,4 +39,12 @@ header {
 .login-instead {
     padding-left: 60px;
     padding-right: 5px;
+}
+
+.featured {
+    display: flex;
+    flex: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px;
 }
