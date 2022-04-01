@@ -2,7 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Review extends Model {}
-// define the table columns and configuration, similar to the setup for the User model
+
 Review.init(
     {
         id: {
@@ -19,7 +19,6 @@ Review.init(
             type: DataTypes.TEXT,
             allowNull: false,
             validate: {
-                // post must be at least one character long
                 len: [1]
             }
         },
