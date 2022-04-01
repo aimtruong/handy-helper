@@ -4,9 +4,11 @@ const sequelize = require('../config/connection');
 
 
 router.get('/', (req, res) => {
-    res.render('sign-in')
+    res.render('main')
 })
 
-router.get()
+router.get('/login', (req, res) => {
+    res.render('login')
+})
 
 module.exports = router
