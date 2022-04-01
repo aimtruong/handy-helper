@@ -32,6 +32,10 @@ Handyman.init(
             notEmpty: true,
             }
           },
+          businessName: {
+            type: DataTypes.STRING,
+            allowNull: true,
+          },
           email: {
           type: DataTypes.STRING,
           allowNull: false,
