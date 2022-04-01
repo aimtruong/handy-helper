@@ -17,7 +17,7 @@ Handyman.init(
           allowNull: false,
           primaryKey: true, //this column is the primary key
           autoIncrement: true
-          },
+        },
           firstName: {
           type: DataTypes.STRING,
           allowNull: false,
