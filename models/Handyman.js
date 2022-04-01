@@ -18,6 +18,13 @@ Handyman.init(
           primaryKey: true, //this column is the primary key
           autoIncrement: true
         },
+        specialty_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'specialty',
+                key: 'id'
+            }
+        },
           firstName: {
           type: DataTypes.STRING,
           allowNull: false,
