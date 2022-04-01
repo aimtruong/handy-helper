@@ -1,4 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --dark: rgb(183, 205, 219);
+    --light: rgb(204, 219, 228);
+    --lighter: rgb(218, 227, 233);
+}
+
 body {
+    background-color: var(--lighter);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -7,12 +20,17 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-color: rgb(223, 223, 223);
+    background-color: var(--dark);
     padding: 0 30px;
     margin-bottom: 50px;
+    position:sticky;
 }
 
-header nav ul li a {
+header h1 {
+    padding: 10px;
+}
+
+header h1 a:hover {
     text-decoration: none;
 }
 
@@ -21,19 +39,30 @@ header nav ul {
     flex-wrap: wrap;
     justify-content: space-between;
     justify-content: center;
+    list-style: none;
+    align-items: center;
+    padding-top: 15px;
 }
 
-header nav ul li a {
-    padding: 10px 15px;
+header nav ul li {
+    padding: 10px;
     font-weight: 200;
-    font-size: 1.4vw;
+    font-size: 15px;
 }
 
-.hero {
+header nav ul li a:hover {
+    text-decoration: none;
+}
+
+.hero .row {
+    padding: 30px 0;
+    background-color: var(--light);
+}
+
+.hero .row div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: left;
 }
 
 .login-instead {
@@ -41,10 +70,18 @@ header nav ul li a {
     padding-right: 5px;
 }
 
+.feature {
+    text-align: center;
+    padding: 30px;
+    font-weight: 200;
+}
+
 .featured {
     display: flex;
     flex: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 100px;
+    padding: 100px 100px 800px 100px;
+    background-color: var(--dark);
+    padding-bottom: 120px;
 }
