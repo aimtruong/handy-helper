@@ -13,10 +13,19 @@
 <body>
     <header>
         <h1>
-            <a href="/home">Handy Helper</a>
+            <a href="/home" class="text-decoration-none:hover">Handy Helper</a>
         </h1>
         <nav>
             <ul>
+                <li>
+                    <a href="/..">Explore by distance</a>
+                </li>
+                <li>
+                    <a href="/..">Explore by service</a>
+                </li>
+                <li>
+                    <a href="#sign-up">Inbox</a>
+                </li>
                 <li>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                         Create account
@@ -46,20 +55,11 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <a href="/..">Explore by distance</a>
-                </li>
-                <li>
-                    <a href="/..">Explore by service</a>
-                </li>
-                <li>
-                    <a href="#sign-up">Inbox</a>
-                </li>
             </ul>
         </nav>
     </header>
 
-    <section class="container">
+    <section class="container hero">
         <div class="row">
             <div class="col-md">
                 <h2>Connecting homeowners with valuable services</h2>
@@ -83,11 +83,14 @@
         </div>
     </section>
 
-    <section class="featured container">
-        <article>feature 1</article>
-        <article>feature 2</article>
-        <article>feature 3</article>
-        <article>feature 3</article>
+    <section>
+        <h3 class="feature"> Featured Projects</h3>
+        <div class="featured container">
+            <article>feature 1</article>
+            <article>feature 2</article>
+            <article>feature 3</article>
+            <article>feature 3</article>
+        </div>
     </section>
 
     <script src="./index.js"></script>
