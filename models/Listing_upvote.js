@@ -11,7 +11,7 @@ Listing_upvote.init(
             autoIncrement: true,
             primaryKey: true
         },
-        user_id: {
+        customer_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'customer',
@@ -21,7 +21,7 @@ Listing_upvote.init(
         listing_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'handyman',
+                model: 'newListing',
                 key: 'id'
             }
         }

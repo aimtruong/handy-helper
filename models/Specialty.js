@@ -18,6 +18,13 @@ Specialty.init(
         description: {
             type: DataTypes.STRING,
             AllowNull: false
+        },
+        handyman_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'handyman',
+              key: 'id'
+            }
         }
     },
     {

@@ -25,11 +25,11 @@ NewListing.init(
         validate: {
             isDecimal: true
         }
-    },
-      user_id: {
+      },
+      handyman_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'user',
+          model: 'handyman',
           key: 'id'
         }
       }
