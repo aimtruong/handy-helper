@@ -1,7 +1,7 @@
 
 const router = require("express").Router();
 const sequelize = require("../config/connection.js");
-const { User, } = require("../models");
+//const { User, } = require("../models");
 
 
 // GET all routes for homepage
