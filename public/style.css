@@ -5,9 +5,14 @@
 }
 
 :root {
-    --dark: rgb(183, 205, 219);
+    /* --dark: rgb(183, 205, 219);
+    --darker: rgb(78, 114, 136);
     --light: rgb(204, 219, 228);
-    --lighter: rgb(218, 227, 233);
+    --lighter: rgb(218, 227, 233); */
+    --dark: rgb(202, 168, 135);
+    --darker: rgb(63, 41, 12);
+    --light: rgb(209, 199, 164);
+    --lighter: rgb(245, 237, 226);
 }
 
 body {
@@ -24,14 +29,17 @@ header {
     padding: 0 30px;
     margin-bottom: 50px;
     position:sticky;
+    margin: 0;
 }
 
-header h1 {
+header h1 a {
     padding: 10px;
+    color: var(--lighter);
 }
 
 header h1 a:hover {
     text-decoration: none;
+    color: var(--darker);
 }
 
 header nav ul {
@@ -50,19 +58,37 @@ header nav ul li {
     font-size: 15px;
 }
 
-header nav ul li a:hover {
+header nav ul li a {
+    color: var(--darker);
+}
+
+header nav ul li a:hover, header nav h1:hover {
     text-decoration: none;
+    color: var(--lighter);
 }
 
-.hero .row {
-    padding: 30px 0;
-    background-color: var(--light);
+button {
+    color: var(--lighter);
+    background-color: var(--darker);
 }
 
-.hero .row div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
+.hero {
+    background-image: url('./img/neighbors.jpg');
+    background-attachment: fixed;
+    background-position: 55%;
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--lighter);
+    text-shadow: 2px 2px var(--darker);
+}
+
+.hero-text h2 {
+    padding-bottom: 2vw;
+}
+
+.row {
+    padding: 100px 0;
 }
 
 .login-instead {
@@ -70,10 +96,16 @@ header nav ul li a:hover {
     padding-right: 5px;
 }
 
+.btn2 {
+    background-color: var(--lighter);
+    color: var(--darker);
+}
+
 .feature {
     text-align: center;
     padding: 30px;
     font-weight: 200;
+    color: var(--darker);
 }
 
 .featured {
@@ -84,4 +116,10 @@ header nav ul li a:hover {
     padding: 100px 100px 800px 100px;
     background-color: var(--dark);
     padding-bottom: 120px;
+}
+
+.formlogin {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1px;
 }
