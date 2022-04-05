@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Helper - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="/home" class="">Handy Helper</a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/...">Explore by distance</a>
+                </li>
+                <li>
+                    <a href="/...">Explore by service</a>
+                </li>
+                <li>
+                    <a href="#sign-up">Inbox</a>
+                </li>
+                <li>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                        Create account
+                    </button>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Sign up</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label for="exampleInputEmail1">Email address</label>
+                                      <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="exampleInputPassword1">Password</label>
+                                      <input type="password" class="form-control" id="password-login" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Create Account</button>
+                                    <label class="login-instead">Already have an account?</label>
+                                    <button type="submit" class="btn btn-secondary">Login</button>
+                                  </form>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        {{{body}}}
+    </div>
+
+
+</html>
