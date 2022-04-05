@@ -21,8 +21,10 @@ Tag.init(
         },
         newListing_id: {
             type: DataTypes.INTEGER,
-            references: 'newListing',
-            key: 'id'
+            references: {
+                model: 'newListing',
+                key: 'id'
+            }
         }
     },
     {

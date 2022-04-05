@@ -9,9 +9,9 @@ const listingRoutes = require("./listing-routes.js");
 
 router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
-router.use("/dashboard", dashboardRoutes);
-router.use("/profile", profileRoutes);
-router.use("/listing", listingRoutes);
+//router.use("/dashboard", dashboardRoutes);
+//router.use("/profile", profileRoutes);
+//router.use("/listing", listingRoutes);
 
 
 router.use((req, res) => {

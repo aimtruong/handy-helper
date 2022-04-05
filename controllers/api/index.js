@@ -11,9 +11,9 @@ const reviewRoutes = require("./review-routes.js");
 
 
 router.use("/users", userRoutes);
-router.use("/handymans", handymanRoutes);
+//router.use("/handymans", handymanRoutes);
 
-router.use("/messages", messagesRoutes);
+//router.use("/messages", messagesRoutes);
 router.use("/reviews", reviewRoutes);
 
 

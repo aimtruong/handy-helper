@@ -16,7 +16,7 @@ Review.init(
             allowNull: false
         },
         review_text: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
