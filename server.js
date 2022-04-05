@@ -3,10 +3,16 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 
+const io = require('socket.io')(3005) //for messaging
+
+io.on('connection', socket => {
+    socket.emit('chat-message', 'Welcome to Handy Helper Chat') //for messaging
+})
+
 const routes = require('./controllers')
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
