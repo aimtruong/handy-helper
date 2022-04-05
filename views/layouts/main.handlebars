@@ -9,19 +9,53 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1>
-            <a href="/">Handy Helper</a>
-        </h1>
-        <nav>
+  <header>
+      <h1>
+          <a href="/home" class="text-decoration-none:hover">Handy Helper</a>
+      </h1>
+      <nav>
           <ul>
-            <li class="li-inline nav-item"><a href="/">Home</a></li>
-            <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-            <li class="li-inline nav-item"><a href="/login">Login</a></li>
-            <li class="li-inline nav-item"><a href="#" id="logout">Logout</a></li>
+              <li>
+                  <a href="/...">Explore by distance</a>
+              </li>
+              <li>
+                  <a href="/...">Explore by service</a>
+              </li>
+              <li>
+                  <a href="#sign-up">Inbox</a>
+              </li>
+              <li>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      Create account
+                  </button>
+                  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Sign up</h5>
+                          </div>
+                          <div class="modal-body">
+                              <form>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Create Account</button>
+                                  <label class="login-instead">Already have an account?</label>
+                                  <button type="submit" class="btn btn-secondary">Login</button>
+                                </form>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+              </li>
           </ul>
-        </nav>
-    </header>
+      </nav>
+  </header>
 
   <main class="col-auto">
     {{{body}}}
