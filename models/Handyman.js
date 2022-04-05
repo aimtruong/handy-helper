@@ -50,6 +50,10 @@ Handyman.init(
             validate: {
                 len: [5]
             }
+        },
+        bio: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {
