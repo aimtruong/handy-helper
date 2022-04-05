@@ -1,7 +1,6 @@
 {
   "name": "handy-helper",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,12 +20,17 @@
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
+    "prettier": "^2.6.1",
     "sequelize": "^6.17.0",
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.6.1"
+    "socket.io": "^4.4.1"
+  },
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
