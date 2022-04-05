@@ -17,7 +17,7 @@ Profile_upvote.init(
                 model: 'customer',
                 key: 'id'
             }
-        },
+        }
         // does this relate to handyman by upvoting the 
         // handyman since we don't have a profile model?
         //profile_id: {

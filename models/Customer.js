@@ -1,7 +1,7 @@
-const sequelize = require('../config/connection')
-const bcrypt = require('bcrypt')
+const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-const { Model, DataTypes } = require('sequelize')
+const { Model, DataTypes } = require('sequelize');
 
 class Customer extends Model {
     //method to run on a user instance to check the password
@@ -12,34 +12,34 @@ class Customer extends Model {
 
 Customer.init(
     {
-      id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          primaryKey: true, //this column is the primary key
-          autoIncrement: true
-          },
-          username: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true,
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true, //this column is the primary key
+            autoIncrement: true
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
             }
-          },
-          email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          unique: true, //disallows duplicate
-          validate: {
-              isEmail: true
-              }
-          },
-          password: {
-          type: DataTypes.STRING,
-           allowNull: false,
-          validate: {
-              len: [5]
-              }
-          }
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true, //disallows duplicate
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [5]
+            }
+        }
     },
     {
         hooks: {

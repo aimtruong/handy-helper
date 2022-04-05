@@ -18,11 +18,6 @@ Tag.init(
         description: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        newListing_id: {
-            type: DataTypes.INTEGER,
-            references: 'newListing',
-            key: 'id'
         }
     },
     {

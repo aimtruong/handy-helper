@@ -9,6 +9,7 @@ const Review = require("./Review");
 const Listing_Upvote = require("./Listing_upvote");
 const Profile_Upvote = require("./Profile_upvote");
 
+const ListingTag = require("./ListingTag");
 
 // create associations
 Handyman.hasMany(NewListing, {
@@ -59,6 +60,16 @@ Customer.hasMany(Profile_Upvote, {
     foreignKey: 'customer_id' // from Profile_upvote
 });
 
+NewListing.belongsToMany(Tag, {
+    through: ListingTag,
+    foreignKey: "listing_id"
+});
+
+Tag.belongsToMany(NewListing, {
+    through: ListingTag,
+    foreignKey: "tag_id"
+});
+
 // to add an assocation with customers and handymans when reviews works?
 // to add an assocation with handymans and upvotes since they can also use the site?
 
@@ -71,5 +82,6 @@ module.exports = {
     Customer,
     Review,
     Listing_Upvote,
-    Profile_Upvote 
+    Profile_Upvote,
+    ListingTag
 }

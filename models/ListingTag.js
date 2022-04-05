@@ -1,9 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../config/connection');
 
-class Review extends Model {}
+class ListingTag extends Model {}
 
-Review.init(
+ListingTag.init(
+  // columns
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,32 +13,28 @@ Review.init(
             primaryKey: true,
             autoIncrement: true
         },
-        title: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        review_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
-        },
-        customer_id: {
+        listing_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'customer',
-                key: 'id'
+                model: "newListing",
+                key: "id"
+            }
+        },
+        tag_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "tag",
+                key: "id"
             }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'review'
+        modelName: 'listing_tag',
     }
-)
+);
 
-// Export the model
-module.exports = Review;
+module.exports = ListingTag;
