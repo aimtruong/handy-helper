@@ -12,52 +12,45 @@ class Handyman extends Model {
 
 Handyman.init(
     {
-      id: {
-          type: DataTypes.INTEGER,
-          allowNull: false,
-          primaryKey: true, //this column is the primary key
-          autoIncrement: true
-        },
-        specialty_id: {
+        id: {
             type: DataTypes.INTEGER,
-            references: {
-                model: 'specialty',
-                key: 'id'
+            allowNull: false,
+            primaryKey: true, //this column is the primary key
+            autoIncrement: true
+        },
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
             }
         },
-          firstName: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true,
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: true,
             }
-          },
-          lastName: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          validate: {
-            notEmpty: true,
-            }
-          },
-          businessName: {
+        },
+        businessName: {
             type: DataTypes.STRING,
             allowNull: true,
-          },
-          email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-          unique: true, //disallows duplicate
-          validate: {
-              isEmail: true
-              }
-          },
-          password: {
-          type: DataTypes.STRING,
-           allowNull: false,
-          validate: {
-              len: [5]
-              }
-          }
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true, //disallows duplicate
+            validate: {
+                isEmail: true
+            }
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [5]
+            }
+        }
     },
     {
         hooks: {
