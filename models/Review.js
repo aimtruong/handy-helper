@@ -16,16 +16,16 @@ Review.init(
             allowNull: false
         },
         review_text: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
         },
-        user_id: {
+        customer_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'user',
+                model: 'customer',
                 key: 'id'
             }
         }

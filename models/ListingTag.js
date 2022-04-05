@@ -1,37 +1,40 @@
 const { Model, DataTypes } = require('sequelize');
+
 const sequelize = require('../config/connection');
 
-class Listing_upvote extends Model {}
+class ListingTag extends Model {}
 
-Listing_upvote.init(
+ListingTag.init(
+  // columns
     {
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        customer_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'customer',
-                key: 'id'
-            }
+            primaryKey: true,
+            autoIncrement: true
         },
         listing_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'newListing',
-                key: 'id'
+                model: "newListing",
+                key: "id"
+            }
+        },
+        tag_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "tag",
+                key: "id"
             }
         }
     },
     {
         sequelize,
+        timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'listing_upvote'
+        modelName: 'listing_tag',
     }
 );
 
-module.exports = Listing_upvote;
+module.exports = ListingTag;
