@@ -11,10 +11,10 @@ Profile_upvote.init(
             primaryKey: true,
             autoIncrement: true
         },
-        review_id: {
+        customer_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'review',
+                model: 'customer',
                 key: 'id'
             }
         },

@@ -52,14 +52,14 @@ NewListing.hasMany(Listing_Upvote, {
     foreignKey: 'listing_id' // from Listing_upvote
 });
 
-Handyman.belongsToMany(Review, {
+Handyman.belongsToMany(Customer, {
     through: Profile_Upvote,
     foreignKey: 'handyman_id'
 });
 
 Review.belongsToMany(Handyman, {
     through: Profile_Upvote,
-    foreignKey: 'review_id'
+    foreignKey: 'customer_id'
 });
 
 NewListing.belongsToMany(Tag, {
