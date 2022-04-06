@@ -1,3 +1,12 @@
+                <li>
+                    <button type="button" id ="createAccount" class="btn" data-toggle="modal" data-target="#registerModal">
+                        Create account
+                    </button>
+                </li>
+            </ul>
+        </nav>
+</header>
+
 <section class="hero">
     <div class="container">
         <div class="row hero">
@@ -35,11 +44,11 @@
     </div>
 </section>
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Sign up</h5>
+                <h5 class="modal-title" id="registerModalTitle">Sign up</h5>
             </div>
             <div class="modal-body">
                 <form>
@@ -51,9 +60,9 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="password-login" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn">Create Account</button>
+                    <button type="submit" class="btn" id="signup">Create Account</button>
                     <label class="login-instead">Already have an account?</label>
-                    <button type="submit" class="btn btn2">Login</button>
+                    <button type="submit" class="btn btn2" id="login">Login</button>
                 </form>
             </div>
         </div>
