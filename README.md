@@ -3,7 +3,7 @@
 
 
 ## Description
-    AS A , I WANT a website where I can browse multiple construction services to get my projects done
+    AS A property owner, I WANT a website where I can browse multiple construction services to get my projects done
     SO THAT I can have a better property
 
 ---
