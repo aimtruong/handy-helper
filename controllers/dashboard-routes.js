@@ -18,8 +18,8 @@ router.get('/customer/:id', async (req, res) => {
     });
 
     if (response1 && response2) {
-        const customerData = response1.map(customer => customer.get({ plain: true }));
-        const listingsData = response2.map(listing => listing.get({ plain: true }));
+        const customerData = response1
+        const listingsData = response2
 
         res.render('dash-cust', { customerData, listingsData, loggedIn: true });
     } else {
