@@ -26,7 +26,8 @@ const server = http.createServer(app)
 const io = require('socket.io')(server) //for messaging
 const messaging = require('./controllers/messaging-route')
 
-app.use(session(sess));
+const sessionMiddleware = session(sess)
+app.use(sessionMiddleware);
 
 const hbs = exphbs.create({});
 
@@ -49,8 +50,15 @@ sequelize.sync({ force: true }).then(() => {
 
 //for messaging
 const users = {}
-io.on('connection', socket => {     
+io.use((socket, next) => {
+  sessionMiddleware(socket.request, {}, next)
+})
+
+
+io.on('connection', socket => {   
+  const session = socket.request.session  
   socket.on('new-user', name => {
+    console.log(session)
     users[socket.id] = name
     socket.broadcast.emit('user-connected', name)
   })
@@ -59,8 +67,12 @@ io.on('connection', socket => {
       message: message,
       name: users[socket.id] })
     })
-    socket.on('disconnect', () => {
+    socket.on('disconnecting', (name) => {
       socket.broadcast.emit('user-disconnected', users[socket.id])
-      delete users[socket.id]
+      users[socket.id] = name
+      socket.broadcast.emit('user-connected', name)
   })
 })
+
+
+

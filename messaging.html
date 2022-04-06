@@ -7,20 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Handy Helper - Chat</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="./public/messaging.css">
 </head>
 
 <body>
-
-<div id="message-container"></div>
-<form id="send-container">
-    <input type="text" id="message-input">
-    <button type="submit" id="send-button">Send Message</button>
-</form>
-
+ 
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-sm-12 col-xs-12">
+                <div class="card p-4 p-md-4 my-4 mx-3 mx-md-0 text-white">
+                    <h6>Welcome!</h6>
+                    <p>You're using Handy Helper Chat!!</p>
+                        <div class="card">
+                            <div class= "card-body" id="message-container"></div>
+                            </div>
+                        </div>
+                            <form id="send-container">
+                                <input type="text" id="message-input">
+                                <button type="submit" id="send-button">Send Message</button>
+                            </form>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
+<script src="js/jquery.js"></script>
 <script defer src="/socket.io/socket.io.js"></script> <!--socket io call-->
 <script defer src="/public/javascript/script.js"></script><!--socket io deferral-->
 

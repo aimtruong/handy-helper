@@ -41,7 +41,7 @@ router.get('/customer/:id', (req, res) => {
     })
         .then(dbCustomerData => {
             if (!dbCustomerData) {
-                res.status(404).json({ message: 'No customer wioth this id' });
+                res.status(404).json({ message: 'No customer with this id' });
                 return;
             }
             res.json(dbCustomerData);

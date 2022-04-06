@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+:root {
+      /* --dark: rgb(183, 205, 219);
+      --darker: rgb(78, 114, 136);
+      --light: rgb(204, 219, 228);
+      --lighter: rgb(218, 227, 233); */
+      --dark: rgb(202, 168, 135);
+      --darker: rgb(63, 41, 12);
+      --light: rgb(209, 199, 164);
+      --lighter: rgb(245, 237, 226);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+html,
+body {
+    height: 100%
+}
+
+* {
+    padding: 0px;
+    margin: 0px
+}
+
+body {
+    background-color:rgb(245, 237, 226);
+    display: grid;
+    place-items: center
+}
+
+.card {
+    background-color: rgb(84, 177, 194);
+    color: black;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif
+}
+
+.card-body {
+    color: black;
+    background-color: rgb(245, 237, 226);
+}
+
+h6,
+p,
+form {
+    color: black;
+    font-size: 0.9rem
+}
+
+.form-control {
+    background-color: rgb(209, 199, 164);
+    border: 1px solid #545454
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #222222;
+    border: 0px;
+    outline: 0
+}
+
+.btn {
+    background-color: #5b72d8;
+    border-radius: 4px;
+    border: 0px
+}
+
+.btn:focus,
+.btn:hover {
+    background-color: #6d84ea;
+    border: 0px;
+    outline: none;
+    box-shadow: none
+}
+
+#message-container {
+    background-color: white;
+}
+
+*:focus {
+    outline: none
+}
