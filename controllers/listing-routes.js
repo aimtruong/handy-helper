@@ -1,6 +1,6 @@
 
 const router = require('express').Router();
-const { Handyman, NewListing, Listing_upvote, Tag, ListingTag } = require("../models");
+const { Handyman, NewListing, Tag, ListingTag } = require("../models");
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
@@ -12,11 +12,7 @@ router.get("/", (req, res) => {
             "title", 
             "post_content",
             "price",
-            "created_at",
-            //[
-            //    sequelize.literal("(SELECT COUNT(*) FROM listing_upvote WHERE newListing.id = listing_upvote.listing_id)"), 
-            //    "vote_count"
-            //]
+            "created_at"
         ],
         include: [
             {
@@ -48,11 +44,7 @@ router.get("/:id", (req, res) => {
             "title", 
             "post_content",
             "price",
-            "created_at",
-            //[
-            //    sequelize.literal("(SELECT COUNT(*) FROM listing_upvote WHERE newListing.id = listing_upvote.listing_id)"), 
-            //    "vote_count"
-            //]
+            "created_at"
         ],
         include: [
             {
@@ -108,20 +100,6 @@ router.post("/", /* withAuth, */ (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
-});
-
-// PUT a upvote
-router.put("/upvote", /* withAuth, */ (req, res) => {
-    // check if session exists first
-    if(req.session){
-        // custom static method created in models/Post.js
-        NewListing.upvote( { ...req.body, handyman_id: req.session.handyman_id }, { Listing_upvote, Handyman })
-            .then(UpdatedVoteData => res.json(UpdatedVoteData))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    }
 });
 
 // PUT a listing

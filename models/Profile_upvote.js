@@ -11,22 +11,20 @@ Profile_upvote.init(
             primaryKey: true,
             autoIncrement: true
         },
-        user_id: {
+        customer_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'customer',
                 key: 'id'
             }
+        },
+        handyman_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'handyman',
+                key: 'id'
+            }
         }
-        // does this relate to handyman by upvoting the 
-        // handyman since we don't have a profile model?
-        //profile_id: {
-        //    type: DataTypes.INTEGER,
-        //    references: {
-        //        model: 'handyman',
-        //        key: 'id'
-        //    }
-        //}
     },
     {
         sequelize,

@@ -24,6 +24,13 @@ Handyman.hasMany(Specialty, {
     foreignKey: 'handyman_id' // from Speciality
 });
 
+Handyman.hasMany(Review, {
+    foreignKey: 'handyman_id' // from Review
+});
+
+Review.belongsTo(Handyman, {
+    foreignKey: "handyman_id" // from Review
+})
 NewListing.hasMany(Tag, {
     foreignKey: 'newListing_id'  // from Tag
 });
@@ -52,12 +59,14 @@ NewListing.hasMany(Listing_Upvote, {
     foreignKey: 'listing_id' // from Listing_upvote
 });
 
-Profile_Upvote.belongsTo(Customer, {
-    foreignKey: 'customer_id' // from Profile_upvote
+Handyman.belongsToMany(Customer, {
+    through: Profile_Upvote,
+    foreignKey: 'handyman_id'
 });
 
-Customer.hasMany(Profile_Upvote, {
-    foreignKey: 'customer_id' // from Profile_upvote
+Review.belongsToMany(Handyman, {
+    through: Profile_Upvote,
+    foreignKey: 'customer_id'
 });
 
 NewListing.belongsToMany(Tag, {
