@@ -83,8 +83,8 @@ router.get('/handyman/:id', (req, res) => {
         });
 });
 
-// POST /api/users/customer
-router.post("/customer", (req, res) => {
+// POST /api/users/customer/signup
+router.post("/customer/signup", (req, res) => {
     Customer.create({
         username: req.body.username,
         email: req.body.email,
@@ -105,8 +105,8 @@ router.post("/customer", (req, res) => {
         });
 });
 
-// POST /api/users/handyman
-router.post('/handyman', (req, res) => {
+// POST /api/users/handyman/signup
+router.post('/handyman/signup', (req, res) => {
     Handyman.create({
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -119,6 +119,7 @@ router.post('/handyman', (req, res) => {
                 req.session.handyman_id = dbHandymanData.id;
                 req.session.username = dbHandymanData.firstName;
                 req.session.loggedIn = true;
+                req.session.isHandyman = true;
 
                 res.json(dbHandymanData);
             });
@@ -127,6 +128,64 @@ router.post('/handyman', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+// POST login at api/users/login
+router.post('/login', async (req, res) => {
+    const customer = await Customer.findOne({
+        where: {
+            email: req.body.email
+        }
+    });
+    
+    const handyman = await Handyman.findOne({
+        where: {
+            email: req.body.email
+        }
+    });
+
+    if (customer) {
+        const validPassword = customer.checkPassword(req.body.password);
+        if(!validPassword) {
+            res.status(400).json({ message: 'Incorrect password' });
+            return;
+        }
+        req.session.save(() => {
+            req.session.customer_id = customer.id;
+            req.session.username = customer.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: customer, isHandyman: false, message: 'You are now logged in' });
+        });
+    } else if (handyman) {
+        const validPassword = handyman.checkPassword(req.body.password);
+            if(!validPassword) {
+                res.status(400).json({ message: 'Icorrect password' });
+                return;
+            }
+            req.session.save(() => {
+                req.session.handyman_id = handyman.id;
+                req.session.username = handyman.firstName;
+                req.session.loggedIn = true;
+                req.session.isHandyman = true;
+
+                res.json({ user: handyman, isHandyman: true, message: 'You are now logged in' });
+            });
+    } else {
+        res.status(404).json({ message: 'No user with this email' });
+        return;
+    }
+});
+
+// POST logout at api/users/logout
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
 });
 
 // PUT api/users/customer/:id
