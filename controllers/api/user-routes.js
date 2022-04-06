@@ -155,7 +155,7 @@ router.post('/login', async (req, res) => {
             req.session.username = customer.username;
             req.session.loggedIn = true;
 
-            res.json({ user: customer, message: 'You are now logged in' });
+            res.json({ user: customer, isHandyman: false, message: 'You are now logged in' });
         });
     } else if (handyman) {
         const validPassword = handyman.checkPassword(req.body.password);
@@ -169,7 +169,7 @@ router.post('/login', async (req, res) => {
                 req.session.loggedIn = true;
                 req.session.isHandyman = true;
 
-                res.json({ user: handyman, message: 'You are now logged in' });
+                res.json({ user: handyman, isHandyman: true, message: 'You are now logged in' });
             });
     } else {
         res.status(404).json({ message: 'No user with this email' });
