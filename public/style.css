@@ -107,6 +107,10 @@ button {
     padding-right: 5px;
 }
 
+.list-group-item a {
+    color: var(--darker);
+}
+
 .btn2 {
     background-color: var(--lighter);
     color: var(--darker);
