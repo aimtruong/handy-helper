@@ -36,20 +36,31 @@ app.set('view engine', 'handlebars');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static(__dirname + "/public"));
-// app.use("/node_modules", express.static(__dirname + "/node_modules"));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', messaging)
 
-//app.use(routes);
+app.use(routes);
 
 sequelize.sync({ force: true }).then(() => {
   server.listen(PORT, () => console.log('Now listening'));
 });
 
-io.on('connection', socket => {      //for messaging
+//for messaging
+const users = {}
+io.on('connection', socket => {     
+  socket.on('new-user', name => {
+    users[socket.id] = name
+    socket.broadcast.emit('user-connected', name)
+  })
   socket.on('send-chat-message', message => {
-    socket.broadcast.emit('chat-message', message)
+    socket.broadcast.emit('chat-message', { 
+      message: message,
+      name: users[socket.id] })
+    })
+    socket.on('disconnect', () => {
+      socket.broadcast.emit('user-disconnected', users[socket.id])
+      delete users[socket.id]
   })
 })
