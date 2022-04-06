@@ -61,21 +61,21 @@ const reviewData = [
     {
         // 9
         title: 'Would recommend always',
-        review_text: "My house got flooded from a burst pipe and they were able to fix my tiles and sink so well and quick",
+        review_text: "My house got flooded from a burst pipe and they were able to fix my tiles and sink so well and quick.",
         customer_id: 9,
         handyman_id: 2
     },
     {
         // 10
         title: 'Love Rascal Repair!!',
-        review_text: "They did an amazing work on fixing my yard after the tornado, would call them again if anything happens again",
+        review_text: "They did an amazing work on fixing my yard after the tornado, would call them again if anything happens again.",
         customer_id: 1,
         handyman_id: 2
     },
     {
         // 11
         title: 'Party fixer',
-        review_text: "After my party, I found that someone flushed down a whole roll of toliet paper which clogged the pipes. It was nice to have Joes Plumbing help us",
+        review_text: "After my party, I found that someone flushed down a whole roll of toliet paper which clogged the pipes. It was nice to have Joes Plumbing help us.",
         customer_id: 2,
         handyman_id: 1
     },

@@ -5,7 +5,7 @@ const listingData = [
     {
         // 1
         title: 'Toliet Plumbing',
-        post_content: "If you got a broken toliet or a burst pipe from it, then call Joe's Plumbing",
+        post_content: "If you got a broken toliet or a burst pipe from it, then call Joe's Plumbing.",
         price: 30,
         tagIds: [1, 3, 6],
         handyman_id: 1
@@ -13,7 +13,7 @@ const listingData = [
     {
         // 2
         title: 'Kitchen Repairs',
-        post_content: 'Need your kitchen upgrade or your stove fixed, then call Rascal Repair',
+        post_content: 'Need your kitchen upgrade or your stove fixed, then call Rascal Repair.',
         price: 400,
         tagIds: [2, 6, 7],
         handyman_id: 2
@@ -21,7 +21,7 @@ const listingData = [
     {
         // 3
         title: 'Remodeling houses for $2999',
-        post_content: 'Revenge of the Remodel will fix your property no matter how old it is',
+        post_content: 'Revenge of the Remodel will fix your property no matter how old it is.',
         price: 2999,
         tagIds: [6, 7, 8],
         handyman_id: 3
@@ -29,7 +29,7 @@ const listingData = [
     {
         // 4
         title: 'Quick remodeling for any house!',
-        post_content: 'Need a full house remodel? Call Rapid Remodel to have it done in less than 2 weeks',
+        post_content: 'Need a full house remodel? Call Rapid Remodel to have it done in less than 2 weeks.',
         price: 3000,
         tagIds: [2, 6, 7],
         handyman_id: 4
@@ -37,7 +37,7 @@ const listingData = [
     {
         // 5
         title: 'Glam up your house!',
-        post_content: "If your house needs to be redecorated, then call up Interior Glam to make it how you've always wanted it for a good price",
+        post_content: "If your house needs to be redecorated, then call up Interior Glam to make it how you've always wanted it for a good price.",
         price: 2000,
         tagIds: [2, 4],
         handyman_id: 5
@@ -45,7 +45,7 @@ const listingData = [
     {
         // 6
         title: 'Weed Removings',
-        post_content: 'Will remove weeds and spray with weed killer for $100',
+        post_content: 'Will remove weeds and spray with weed killer for $100.',
         price: 100,
         tagIds: [1, 5],
         handyman_id: 6
@@ -53,7 +53,7 @@ const listingData = [
     {
         // 7
         title: 'Replace carpet',
-        post_content: 'If you need your carpet replace without wanting the hassle of moving your furniture, then call Central Carpeting',
+        post_content: 'If you need your carpet replace without wanting the hassle of moving your furniture, then call Central Carpeting.',
         price: 400,
         tagIds: [1, 6, 7],
         handyman_id: 7
@@ -61,7 +61,7 @@ const listingData = [
     {
         // 8
         title: 'Clogged sink',
-        post_content: "Call Joe's Plumbing if you have a clogged sink no matter how much you tried to drain it",
+        post_content: "Call Joe's Plumbing if you have a clogged sink no matter how much you tried to drain it.",
         price: 50,
         tagIds: [1, 3, 6],
         handyman_id: 1
@@ -85,7 +85,7 @@ const listingData = [
     {
         // 11
         title: 'Upgrade a room',
-        post_content: 'We can remodel a room in less than a week',
+        post_content: 'We can remodel a room in less than a week.',
         price: 1000,
         tagIds: [2, 7],
         handyman_id: 4

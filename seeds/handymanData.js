@@ -14,7 +14,7 @@ const handymandata = [
         // 2
         firstName: 'Mike',
         lastName: 'Conner',
-        businessName: 'rascal repair',
+        businessName: 'Rascal Repair',
         email: 'rascalrepair@gmail.com',
         password: 'password123',
         bio: 'Can repair anything from a hole in the wall or a broken pipe under your sink.'
@@ -23,7 +23,7 @@ const handymandata = [
         // 3
         firstName: 'Darth',
         lastName: 'Vader',
-        businessName: 'Revenge of the remodel',
+        businessName: 'Revenge of the Remodel',
         email: 'iamyourfather@gmail.com',
         password: 'password123',
         bio: 'Remodeling homes for 10 years.'
@@ -32,7 +32,7 @@ const handymandata = [
         // 4
         firstName: 'Joe',
         lastName: 'Dirt',
-        businessName: 'Rapid remodel',
+        businessName: 'Rapid Remodel',
         email: 'Joeydirt@gmail.com',
         password: 'password123',
         bio: 'Can remodel your home in less than 2 weeks.'
@@ -59,7 +59,7 @@ const handymandata = [
         // 7
         firstName: 'Justin',
         lastName: 'Beaver',
-        businessName: 'central carpeting',
+        businessName: 'Central Carpeting',
         email: 'theshiz@gmail.com',
         password: 'password123',
         bio: 'Can carpet all kinds of flooring and visit our store for rugs as well.'
