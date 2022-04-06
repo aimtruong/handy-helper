@@ -1,6 +1,11 @@
                 <li>
-                    <button type="button" id ="login" class="btn" data-toggle="modal" data-target="#registerModal">
-                        Create account
+                    <button type="button" id ="handyman" class="btn" data-toggle="modal" data-target="#handymanModal">
+                        Handyman
+                    </button>
+                </li>
+                <li>
+                    <button type="button" id ="customer" class="btn" data-toggle="modal" data-target="#customerModal">
+                        Customer
                     </button>
                 </li>
             </ul>
@@ -44,14 +49,23 @@
     </div>
 </section>
 
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
+<div class="modal fade" id="handymanModal" tabindex="-1" role="dialog" aria-labelledby="handymanModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalTitle">Sign up</h5>
+                <h5 class="modal-title" id="handymanModalTitle">Handyman Sign-Up</h5>
             </div>
             <div class="modal-body">
                 <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Your name</label>
+                        <input type="text" class="form-control" placeholder="First">
+                        <input type="text" class="form-control" placeholder="Last">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Business name</label>
+                        <input type="text" class="form-control" placeholder="Business name">
+                    </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
@@ -69,8 +83,31 @@
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
+<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customerModalTitle">Customer Sign-Up</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password-login" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn" id="signup">Create Account</button>
+                    <label class="login-instead">Already have an account?</label>
+                    <button type="submit" class="btn btn2" id="login">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
