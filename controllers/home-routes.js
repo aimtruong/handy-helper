@@ -7,9 +7,6 @@ const { Handyman, NewListing } = require("../models");
 // GET all routes for homepage
 router.get('/', (req, res) => {
     Handyman.findAll({
-        attributes: [
-            
-        ]
     })
         .then(dbData => {
             const data = dbData.map(data => data.get({ plain: true }));

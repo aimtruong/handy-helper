@@ -73,9 +73,20 @@ button {
 }
 
 .hero {
-    background-image: url('./img/neighbors.jpg');
+    background-image: url('./html-templates/img/home.jpg');
     background-attachment: fixed;
     background-position: 55%;
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--lighter);
+    text-shadow: 2px 2px var(--darker);
+}
+
+.hero2 {
+    background-image: url('./html-templates/img/dashboard.jpg');
+    background-attachment: fixed;
+    background-position: 40%;
     height: 650px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -92,7 +103,7 @@ button {
 }
 
 .login-instead {
-    padding-left: 60px;
+    padding-left: 30px;
     padding-right: 5px;
 }
 
