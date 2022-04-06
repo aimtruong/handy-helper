@@ -6,6 +6,7 @@ const withAuth = require("../../utils/auth");
 // GET all reviews
 router.get("/", (req, res) => {
     Review.findAll({
+
         attributes: [
             "id",
             "title", 
@@ -16,6 +17,10 @@ router.get("/", (req, res) => {
             {
                 model: Customer,
                 attributes: ["id", "username"]
+            },
+            {
+                model: Handyman,
+                attributes: ["id", "firstName", "lastName", "businessName"]
             }
         ]
     })
@@ -43,6 +48,10 @@ router.get("/:id", (req, res) => {
             {
                 model: Customer,
                 attributes: ["id", "username"]
+            },
+            {
+                model: Handyman,
+                attributes: ["id", "firstName", "lastName", "businessName"]
             }
         ]
     })
@@ -64,7 +73,8 @@ router.post("/", /* withAuth, */ (req, res) => {
     Review.create({
         title: req.body.title,
         review_text: req.body.review_text,
-        customer_id: req.session.customer_id
+        customer_id: req.session.customer_id,
+        handyman_id: req.body.handyman_id
     })
     .then(dbReviewData => res.json(dbReviewData))
     .catch(err => {
