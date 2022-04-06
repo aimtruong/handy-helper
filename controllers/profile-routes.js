@@ -1,26 +1,29 @@
 
 const router = require("express").Router();
-const { Review, Handyman, Customer, Profile_upvote } = require("../models");
+const { Review, Handyman, Customer } = require("../models");
 const withAuth = require("../utils/auth");
 
 // GET all reviews in profile
 router.get("/", /* withAuth, */ (req, res) => {
-    Review.findAll({
+    Handyman.findOne({
+        where: {
+            id: req.session.handyman_id
+        },
         attributes: [
-            "id",
-            "title", 
-            "review_text",
-            "created_at"
+            'id',
+            'firstName',
+            'lastName',
+            'businessName',
+            'bio'
         ],
         include: [
             {
-                model: Customer,
-                attributes: ["id", "username"]
-            },
-            {
-                model: Handyman,
-                attributes: ["id"],
-                through: Profile_upvote
+                model: Review,
+                attributes: [ "id", "title", "review_text" ],
+                include: {
+                    model: Customer,
+                    attributes: [ "id", "username" ]
+                }
             }
         ]
     })
@@ -36,10 +39,10 @@ router.get("/", /* withAuth, */ (req, res) => {
         });
 });
 
-router.get("/edit/:id", withAuth, (req, res) => {
+// GET a bio to edit
+router.get("/edit/:id", /* withAuth, */ (req, res) => {
     Handyman.findByPk(req.params.id, {
         attributes: [
-            'id',
             'bio'
         ]
       })
@@ -47,7 +50,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
             if (dbBioData) {
                 const bio = dbBioData.get({ plain: true });
                 
-                res.render('edit-bio', {
+                res.render('edit-profile', {
                     bio,
                     loggedIn: true
                 });

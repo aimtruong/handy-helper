@@ -24,6 +24,13 @@ Handyman.hasMany(Specialty, {
     foreignKey: 'handyman_id' // from Speciality
 });
 
+Handyman.hasMany(Review, {
+    foreignKey: 'handyman_id' // from Review
+});
+
+Review.belongsTo(Handyman, {
+    foreignKey: "handyman_id" // from Review
+})
 NewListing.hasMany(Tag, {
     foreignKey: 'newListing_id'  // from Tag
 });
