@@ -18,7 +18,7 @@ async function editProfileHandler(event) {
             'Content-Type': 'application/json'
         }
     });
-  
+
     if (response.ok) {
         document.location.replace('/profile/');
     }

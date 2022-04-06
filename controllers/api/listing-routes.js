@@ -1,8 +1,7 @@
 
 const router = require('express').Router();
-const { Handyman, NewListing, Tag, ListingTag } = require("../models");
-const sequelize = require("../config/connection");
-const withAuth = require("../utils/auth");
+const { Handyman, NewListing, Tag, ListingTag } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // GET all listings
 router.get("/", (req, res) => {
@@ -21,7 +20,7 @@ router.get("/", (req, res) => {
             },
             {
                 model: Tag,
-                attributes: ["id", "title", "description", "newListing_id"],
+                attributes: ["id", "title"],
                 through: ListingTag
             }
         ]
@@ -53,8 +52,8 @@ router.get("/:id", (req, res) => {
             },
             {
                 model: Tag,
-                attributes: ["id", "title", "description", "newListing_id"],
-                through: ListingTag
+                attributes: ["id", "title"],
+                
             }
         ]
     })

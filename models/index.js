@@ -21,7 +21,11 @@ NewListing.belongsTo(Handyman, {
 });
 
 Handyman.hasMany(Specialty, {
-    foreignKey: 'handyman_id' // from Speciality
+    foreignKey: 'handyman_id' // from Specialty
+});
+
+Specialty.belongsTo(Handyman, {
+    foreignKey: 'handyman_id' // from Specialty
 });
 
 Handyman.hasMany(Review, {
@@ -30,9 +34,6 @@ Handyman.hasMany(Review, {
 
 Review.belongsTo(Handyman, {
     foreignKey: "handyman_id" // from Review
-})
-NewListing.hasMany(Tag, {
-    foreignKey: 'newListing_id'  // from Tag
 });
 
 Customer.hasMany(Review, {
@@ -76,7 +77,7 @@ NewListing.belongsToMany(Tag, {
 
 Tag.belongsToMany(NewListing, {
     through: ListingTag,
-    foreignKey: "tag_id"
+    foreignKey: 'tag_id'
 });
 
 // to add an assocation with customers and handymans when reviews works?
