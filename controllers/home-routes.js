@@ -7,12 +7,20 @@ const { Handyman, NewListing } = require("../models");
 // GET all routes for homepage
 router.get('/', (req, res) => {
     Handyman.findAll({
+        attributes: { exclude: ['email', 'password']},
+        include: [
+            {
+                model: NewListing,
+                attributes: ['id', 'title', 'post_content', 'price']
+            }
+        ]
     })
         .then(dbData => {
-            const data = dbData.map(data => data.get({ plain: true }));
-    
+            const handymans = dbData.map(handyman => handyman.get({ plain: true }));
+            //res.json(handymans);
             res.render('homepage', { 
-                data
+                handymans
+
             });
         })
         .catch(err => {

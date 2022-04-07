@@ -18,14 +18,14 @@
 </section>
 
 <section>
-    <h3 class="feature container"> Featured Projects</h3>
-    <div class="featured row">
-        <article class="col-md-2">feature 1</article>
-        <article class="col-md-2">feature 2</article>
-        <article class="col-md-2">feature 3</article>
-        <article class="col-md-2">feature 4</article>
-        <article class="col-md-2">feature 5</article>
-    </div>
+    {{#if handymans.length}}
+        <h3 class="feature container"> Featured Projects</h3>
+        <div class="featured row">
+                {{#each (limit handymans 4) as |handyman|}}
+                        {{> listing-details handyman}}
+                {{/each}}
+        </div>
+    {{/if}}
 </section>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

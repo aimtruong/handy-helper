@@ -1,3 +1,4 @@
+
                 <li>
                     <button type="button" id ="handyman" class="btn" data-toggle="modal" data-target="#handymanModal">
                         Handyman
@@ -39,14 +40,14 @@
 </section>
 
 <section>
-    <h3 class="feature container"> Featured Projects</h3>
-    <div class="featured row">
-        <article class="col-md-2">feature 1</article>
-        <article class="col-md-2">feature 2</article>
-        <article class="col-md-2">feature 3</article>
-        <article class="col-md-2">feature 4</article>
-        <article class="col-md-2">feature 5</article>
-    </div>
+    {{#if handymans.length}}
+        <h3 class="feature container"> Featured Projects</h3>
+        <div class="featured row">
+                {{#each (limit handymans 4) as |handyman|}}
+                        {{> listing-details handyman}}
+                {{/each}}
+        </div>
+    {{/if}}
 </section>
 
 <div class="modal fade" id="handymanModal" tabindex="-1" role="dialog" aria-labelledby="handymanModalTitle" aria-hidden="true">

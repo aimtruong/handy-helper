@@ -53,6 +53,7 @@ router.get("/:id", (req, res) => {
             {
                 model: Tag,
                 attributes: ["id", "title"],
+                through: ListingTag
                 
             }
         ]

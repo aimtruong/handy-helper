@@ -12,8 +12,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: NewListing,
-                attributes: ["id", "title", "post_content", "price", "handyman_id"],
-                through: ListingTag
+                attributes: ["id", "title", "handyman_id", "tag_id"]
             }
         ]
     })
@@ -40,7 +39,7 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: NewListing,
-                attributes: ["id", "title", "post_content", "price", "handyman_id"]
+                attributes: ["id", "title", "handyman_id", "tag_id"]
             }
         ]
     })
