@@ -7,7 +7,7 @@ const Tag = require("./Tag");
 const Customer = require("./Customer");
 const Review = require("./Review");
 
-//const Listing_Upvote = require("./Listing_upvote");
+const Listing_Upvote = require("./Listing_upvote");
 const Profile_Upvote = require("./Profile_upvote");
 const ListingTag = require("./ListingTag");
 
@@ -85,7 +85,7 @@ module.exports = {
     Tag,
     Customer,
     Review,
-//    Listing_Upvote,
+   Listing_Upvote,
     Profile_Upvote,
     ListingTag
 }
