@@ -1,10 +1,10 @@
 
 const router = require("express").Router();
 const { Review, Handyman, Customer, Specialty } = require("../models");
-const withAuth = require("../utils/auth");
+const withAuthHan = require("../utils/authHan");
 
 // GET all reviews in profile
-router.get("/", /* withAuth, */ (req, res) => {
+router.get("/", withAuthHan,  (req, res) => {
     Handyman.findOne({
         where: {
             id: req.session.handyman_id
@@ -44,7 +44,7 @@ router.get("/", /* withAuth, */ (req, res) => {
 });
 
 // GET a bio to edit
-router.get("/edit/:id", /* withAuth, */ (req, res) => {
+router.get("/edit/:id", withAuthHan,  (req, res) => {
     Handyman.findByPk(req.params.id, {
         attributes: [
             'bio'

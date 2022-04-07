@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Tag, NewListing, ListingTag } = require('../../models');
+const { Tag, NewListing } = require('../../models');
 
 // GET all tags
 router.get('/', (req, res) => {
@@ -25,8 +25,6 @@ router.get('/', (req, res) => {
 
 // GET a tag
 router.get('/:id', (req, res) => {
-    // find a single tag by its `id`
-    // be sure to include its associated Product data
     Tag.findOne({
         where: {
             id: req.params.id

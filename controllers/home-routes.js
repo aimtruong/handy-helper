@@ -1,10 +1,9 @@
 
 const router = require("express").Router();
-const sequelize = require("../config/connection.js");
 const { Handyman, NewListing } = require("../models");
 
 
-// GET all routes for homepage
+// GET handyman and newlisting routes for homepage
 router.get('/', (req, res) => {
     Handyman.findAll({
         attributes: { exclude: ['email', 'password']},
@@ -29,27 +28,8 @@ router.get('/', (req, res) => {
         });
 });
 
-// GET login
-router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-  
-    res.render('login');
-});
 
-// GET signup 
-router.get('/sign-up', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
-  
-    res.render('signup');
-});
-
-// POST a 
+// GET a handyman profile
 router.get("/handymans/:id", (req, res) => {
     Handyman.findOne({
         where: {
@@ -79,20 +59,5 @@ router.get("/handymans/:id", (req, res) => {
         });
 });
 
-// const router = require('express').Router()
-// //const sequelize = require('../config/connection');
-// const { Customer, NewListing } = require('../models')
-
-
-
-// router.get('/', (req, res) => {
-//     res.render('layouts/main')
-// })
-
-// router.get('/login', (req, res) => {
-//     res.render('login')
-// })
-
-// module.exports = router
 
 module.exports = router;

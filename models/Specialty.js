@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class Specialty extends Model {}
 
 Specialty.init(
+    // columns
     {
         id: {
             type: DataTypes.INTEGER,
