@@ -1,6 +1,6 @@
 
 const router = require("express").Router();
-const { Review, Handyman, Customer, Specialty } = require("../models");
+const { Review, Handyman, Customer, Specialty, NewListing } = require("../models");
 const withAuthHan = require("../utils/authHan");
 
 // GET all reviews in profile
@@ -20,6 +20,10 @@ router.get("/", withAuthHan,  (req, res) => {
             {
                 model: Specialty,
                 attributes: ["id", "title"]
+            },
+            {
+                model: NewListing,
+                attributes: ["id", "title", "post_content", "price", "created_at"]
             },
             {
                 model: Review,

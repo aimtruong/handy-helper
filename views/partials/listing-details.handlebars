@@ -5,8 +5,9 @@
         <h3 class = 'card-head featured-title'>{{businessName}}</h3>
 
         {{#each (limit newListings 1) as |newListings|}}
-            <p>{{newListings.title}}</p>
+            <a href = "/profile/{{id}}">{{newListings.title}}</a>
             <p>{{newListings.post_content}}</p>
         {{/each}}
     </section>
 </article>
+
