@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             }
         });
         if(response) {
-            res.render('dash-cust', { response, loggedIn: true });
+            res.render('dash-hand', { response, loggedIn: true });
         } else {
             res.status(500).json({ message: 'there was an error rendiring the page' });
         }

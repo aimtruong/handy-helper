@@ -60,23 +60,23 @@
                 <h5 class="modal-title" id="handymanModalTitle">Handyman Sign-Up</h5>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="handyman-signup">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Your name</label>
-                        <input type="text" class="form-control" placeholder="First">
-                        <input type="text" class="form-control" placeholder="Last">
+                        <input type="text" class="form-control" placeholder="First" id="handy-first">
+                        <input type="text" class="form-control" placeholder="Last" id="handy-last">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Business name</label>
-                        <input type="text" class="form-control" placeholder="Business name">
+                        <input type="text" class="form-control" placeholder="Business name" id="handy-business">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="handy-email" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-login" placeholder="Password">
+                        <input type="password" class="form-control" id="handy-password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn" id="signup">Create Account</button>
                     <label class="login-instead">Already have an account?</label>
@@ -94,18 +94,18 @@
                 <h5 class="modal-title" id="customerModalTitle">Customer Sign-Up</h5>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="customer-signup">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" placeholder="Username" id="cust-username">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+                        <input type="email" class="form-control" id="cust-email" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password-login" placeholder="Password">
+                        <input type="password" class="form-control" id="cust-password" placeholder="Password">
                     </div>
                     <button type="submit" class="btn" id="signup">Create Account</button>
                     <label class="login-instead">Already have an account?</label>
@@ -116,3 +116,4 @@
     </div>
 </div>
 <script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
