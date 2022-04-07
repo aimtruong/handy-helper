@@ -56,7 +56,9 @@ io.use((socket, next) => {
 
 
 io.on('connection', socket => {   
-  const session = socket.request.session  
+  const session = socket.request.session
+  session.connections++
+  session.save()  
   socket.on('new-user', name => {
     console.log(session)
     users[socket.id] = name

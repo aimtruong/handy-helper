@@ -10,24 +10,42 @@
     <link rel="stylesheet" href="./public/messaging.css">
 </head>
 
-<li>
-    <a href="/dashboard">Return to dashboard</a>
-</li>
-<li>
-    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
-        Logout
-    </button>
-</li>
-</ul>
-</nav>
-</header>
-
 <body>
+<section class="hero">
+    <div class="container">
+        <div class="row hero">
+            <div class="col-md-6 hero-text">
+                <header>
+                    <h1>
+                        Handy Helper
+                    </h1>
+                        <nav>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                    Explore by distance
+                            </button>
+                            <span></span>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                Explore by service
+                            </button>
+                            <span></span>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                                Return to dashboard
+                            </button>
+                            <span></span>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                            Logout
+                            </button>
+                </div>
+            </div>
+        </div>
+</nav>
+</section>
+</header>
  
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-sm-12 col-xs-12">
-                <div class="card p-4 p-md-4 my-4 mx-3 mx-md-0 text-white">
+                <div class="card p-4 p-md-4 my-4 mx-3 mx-md-0">
                     <h6>Welcome!</h6>
                     <p>You're using Handy Helper Chat!!</p>
                         <div class="card">
@@ -46,6 +64,7 @@
 
 </body>
 
+<script src="/javascript/logout.js"></script>
 <script src="js/jquery.js"></script>
 <script defer src="/socket.io/socket.io.js"></script> <!--socket io call-->
 <script defer src="/public/javascript/script.js"></script><!--socket io deferral-->
