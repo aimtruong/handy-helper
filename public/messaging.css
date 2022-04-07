@@ -90,9 +90,14 @@ form {
     background-image: url('./img/neighbors.jpg');
     background-attachment: fixed;
     background-position: 55%;
-    height: 400px;
+    height: 90%;
     width: 90%;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--lighter);
+}
+
+.navbar-brand {
+    color: black;
+    font-size: 40px;
 }

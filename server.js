@@ -25,6 +25,7 @@ const sess = {
 const server = http.createServer(app)
 const io = require('socket.io')(server) //for messaging
 const messaging = require('./controllers/messaging-route')
+const homepage = require('./controllers/dashboard-routes')
 
 const sessionMiddleware = session(sess)
 app.use(sessionMiddleware);
@@ -41,6 +42,7 @@ app.use("/public", express.static(__dirname + "/public"));
 
 
 app.use('/', messaging)
+// app.use('*', homepage)
 
 app.use(routes);
 

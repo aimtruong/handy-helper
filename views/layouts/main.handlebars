@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<section class="hero">
+    <section class="hero">
     <div class="container">
         <div class="row hero">
             <div class="col-md-6 hero-text">
@@ -41,35 +41,11 @@
 </nav>
 </section>
 </header>
- 
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-sm-12 col-xs-12">
-                <div class="card p-4 p-md-4 my-4 mx-3 mx-md-0">
-                    <h6>Welcome!</h6>
-                    <p>You're using Handy Helper Chat!!</p>
-                        <div class="card">
-                            <div class= "card-body" id="message-container"></div>
-                            </div>
-                        </div>
-                            <form id="send-container">
-                                <input type="text" id="message-input">
-                                <button type="submit" id="send-button">Send Message</button>
-                            </form>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
+{{{body}}}
 
 </body>
 
 <script src="/public/javascript/logout.js"></script>
-<script src="/controllers/dashboard-routes.js"></script>
-<script src="/controllers/messaging-route.js"></script>
-
-<script src="js/jquery.js"></script>
-<script defer src="/socket.io/socket.io.js"></script> <!--socket io call-->
-<script defer src="/public/javascript/script.js"></script><!--socket io deferral-->
-
 </html>
+

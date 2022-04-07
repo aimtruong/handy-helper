@@ -14,7 +14,7 @@ router.use("/", homeRoutes);
 //router.use("/profile", profileRoutes);
 router.use("/listing", listingRoutes);
 
-router.use("/", messageRoutes);
+router.use("/messaging", messageRoutes)
 
 router.use((req, res) => {
     res.status(400).end();
