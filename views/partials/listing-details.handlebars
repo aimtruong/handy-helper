@@ -1,8 +1,8 @@
 
 
 <article class = "col-md-2 card">
-    <section>
-        <h3 class = 'featured-title'>{{businessName}}</h3>
+    <section class="card">
+        <h3 class = 'card-head featured-title'>{{businessName}}</h3>
 
         {{#each (limit newListings 1) as |newListings|}}
             <p>{{newListings.title}}</p>
