@@ -94,6 +94,16 @@ button {
     text-shadow: 2px 2px var(--darker);
 }
 
+.hero3 {
+    background-image: url('./html-templates/img/profile.jpg');
+    background-attachment: fixed;
+    background-position: 40%;
+    height: 900px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--dark);
+}
+
 .hero-text h2 {
     padding-bottom: 2vw;
 }

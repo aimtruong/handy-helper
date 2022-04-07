@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handy Helper - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <a href="/home" class="">Handy Helper</a>
+        </h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/...">Return to dashboard</a>
+                </li>
+                <li>
+                    <a href="/...">Explore by service</a>
+                </li>
+                <li>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                        Logout
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero3">
+        <section class="h-100 gradient-custom-2">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-9 col-xl-7">
+                  <div class="card">
+                    <div class="rounded-top text-white d-flex flex-row" style="background-color: var(--dark); height:200px;">
+                      <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                        <img src="../html-templates/img/placeholder.jpg" class="img-fluid img-thumbnail mt-4 mb-2" style="margin-left: 65px; width: 150px; z-index: 1 ">
+                        <button data-toggle="modal" data-target="#editProfileModal" type="button" class="btn btn2" data-mdb-ripple-color="dark" style="z-index: 1; margin: 10px">
+                          Edit profile
+                        </button>
+                      </div>
+                      <div class="ms-3" style="margin: 130px 0 0 130px;">
+                        <h5>Handyman Stan</h5>
+                        <p>Northern California</p>
+                      </div>
+                    </div>
+                    <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                      <div class="d-flex justify-content-end text-center py-1">
+                        <div>
+                      </div>
+                    </div>
+                    <div class="card-body p-4 text-black">
+                      <div class="mb-5">
+                        <p class="lead fw-normal mb-1" style="margin-top: 35px;">About</p>
+                        <div class="p-4" style="background-color: #f8f9fa;">
+                          <p class="font-italic mb-1">Lawn mower</p>
+                          <p class="font-italic mb-1">Leaf blower</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </section>
+
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileModalTitle">Edit Profile</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">New email address</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1">
+                          <label for="exampleFormControlTextarea1">Bio</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
