@@ -32,10 +32,11 @@ router.get("/", /* withAuth, */ (req, res) => {
         ]
     })
         .then(dbReviewsData => {
-            res.json(dbReviewsData);
+            // res.json(dbReviewsData);
             // serialize data before passing to template
-            //const reviews = dbReviewsData.map(reviews => reviews.get({ plain: true }));
-            //res.render('profile', { reviews, loggedIn: true });
+            // const reviews = dbReviewsData.map(reviews => reviews.get({ plain: true }));
+            const reviews = dbReviewsData;
+            res.render('profile', { reviews, loggedIn: true });
         })
         .catch(err => {
             console.log(err);

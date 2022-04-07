@@ -2,7 +2,7 @@
                     <a href="/...">Inbox</a>
                 </li>
                 <li>
-                    <a href="/...">Your Profile</a>
+                    <a href="/profile">Your Profile</a>
                 </li>
                 <li>
                     <button type="button" id ="logout" class="btn" data-toggle="modal" data-target="#registerModal">
@@ -15,7 +15,7 @@
 
 <section class="hero2">
     <div class="container" style="padding-top: 50px;">
-    <form>
+    <form id="newList-form">
         <div class="fomr-group">
             <h1 style="padding: 30px;">Create new listing</h1>
         </div>
@@ -35,16 +35,5 @@
     </form>
     </div>
 </section>
-
-<section>
-    {{#if handymans.length}}
-        <h3 class="feature container"> Featured Projects</h3>
-        <div class="featured row">
-                {{#each (limit handymans 4) as |handyman|}}
-                        {{> listing-details handyman}}
-                {{/each}}
-        </div>
-    {{/if}}
-    </div>
-</section>
 <script src="/javascript/logout.js"></script>
+<script src="/javascript/newListing.js"></script>

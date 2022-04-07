@@ -13,8 +13,11 @@ router.get('/', async (req, res) => {
                 attributes: ['id', 'title', 'post_content', 'price', 'created_at']
             }
         });
+
         if(response) {
-            res.render('dash-hand', { response, loggedIn: true });
+            const handymans = response.get({ plain: true });
+
+            res.render('dash-hand', { handymans, loggedIn: true });
         } else {
             res.status(500).json({ message: 'there was an error rendiring the page' });
         }
@@ -35,10 +38,10 @@ router.get('/', async (req, res) => {
         });
     
         if (response1 && response2) {
-            const customerData = response1
-            const listingsData = response2
+            const customerData = response1.get({ plain: true });
+            const listings = response2.map(listing => listing.get({ plain: true }));
     
-            res.render('dash-cust', { customerData, listingsData, loggedIn: true });
+            res.render('dash-cust', { customerData, listings, loggedIn: true });
         } else {
             res.status(500).json({ message: 'there was an error rendiring the page' });
         }

@@ -13,16 +13,17 @@
 <section class="hero2">
     <div class="container">
         <div class="row hero2">
+            Hello {{customerData.username}}
         </div>
     </div>
 </section>
 
 <section>
-    {{#if handymans.length}}
+    {{#if listings.length}}
         <h3 class="feature container"> Featured Projects</h3>
         <div class="featured row">
-                {{#each (limit handymans 4) as |handyman|}}
-                        {{> listing-details handyman}}
+                {{#each (limit listings 4) as |listing|}}
+                        {{> listing-details listing}}
                 {{/each}}
         </div>
     {{/if}}

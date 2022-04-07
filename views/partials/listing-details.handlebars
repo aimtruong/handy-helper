@@ -1,12 +1,21 @@
 
 
-<article class = "col-md-2 card">
-    <section class="card">
-        <h3 class = 'card-head featured-title'>{{businessName}}</h3>
+{{!-- <article class = "col-md-2 card">
+    <section>
+        <h3 class = 'featured-title'>{{businessName}}</h3>
 
         {{#each (limit newListings 1) as |newListings|}}
             <p>{{newListings.title}}</p>
             <p>{{newListings.post_content}}</p>
         {{/each}}
+    </section>
+</article> --}}
+
+<article class="col-md-12 card">
+    <section>
+        <h3 class="featured-title">{{handyman.firstName}}</h3>
+        <p>{{title}}</p>
+        <p>{{post_content}}</p>
+        <p>{{price}}</p>
     </section>
 </article>
