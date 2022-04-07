@@ -1,6 +1,6 @@
                 <li>
-                    <a href="/">Create an account:</a>
-                </li>                
+                    <a href="">Create an account:</a>
+                </li>
                 <li>
                     <button type="button" id ="handyman" class="btn" data-toggle="modal" data-target="#handymanModal">
                         Handyman
@@ -24,17 +24,17 @@
             </div>
             <div class="formlogin col-md-6">
                 <h1>Log in</h1>
-                <form>
+                <form id="login-form">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="InputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <label for="InputPassword1">Password</label>
+                        <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn2">Login</button>
-                    <button type="submit" class="btn" data-toggle="modal" data-target="#registerModal">Sign up</button>
+                    {{!-- <button type="submit" class="btn" data-toggle="modal" data-target="#registerModal">Sign up</button> --}}
                 </form>
             </div>
         </div>
@@ -42,14 +42,14 @@
 </section>
 
 <section>
-    <h3 class="feature container"> Featured Projects</h3>
-    <div class="featured row">
-        <article class="col-md-2">feature 1</article>
-        <article class="col-md-2">feature 2</article>
-        <article class="col-md-2">feature 3</article>
-        <article class="col-md-2">feature 4</article>
-        <article class="col-md-2">feature 5</article>
-    </div>
+    {{#if handymans.length}}
+        <h3 class="feature container"> Featured Projects</h3>
+        <div class="featured row">
+                {{#each (limit handymans 4) as |handyman|}}
+                        {{> listing-details handyman}}
+                {{/each}}
+        </div>
+    {{/if}}
 </section>
 
 <div class="modal fade" id="handymanModal" tabindex="-1" role="dialog" aria-labelledby="handymanModalTitle" aria-hidden="true">
@@ -114,3 +114,5 @@
         </div>
     </div>
 </div>
+<script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
