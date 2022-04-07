@@ -14,9 +14,25 @@
 </header>
 
 <section class="hero2">
-    <div class="container">
-        <div class="row hero2">
+    <div class="container" style="padding-top: 50px;">
+    <form>
+        <div class="fomr-group">
+            <h1 style="padding: 30px;">Create new listing</h1>
         </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Title</label>
+            <input type="text" class="form-control" id="listingTitle">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Listing description</label>
+            <textarea class="form-control" id="listingDesc" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Cost of project or hourly rate</label>
+            <textarea class="form-control" id="listingCost" rows="1"></textarea>
+        </div>
+        <button type="submit" class="btn btn2" style="width: 100%;">Submit</button>
+    </form>
     </div>
 </section>
 
