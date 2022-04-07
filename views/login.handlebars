@@ -1,6 +1,14 @@
                 <li>
-                    <button type="button" id ="createAccount" class="btn" data-toggle="modal" data-target="#registerModal">
-                        Create account
+                    <a href="/">Create an account:</a>
+                </li>                
+                <li>
+                    <button type="button" id ="handyman" class="btn" data-toggle="modal" data-target="#handymanModal">
+                        Handyman
+                    </button>
+                </li>
+                <li>
+                    <button type="button" id ="customer" class="btn" data-toggle="modal" data-target="#customerModal">
+                        Customer
                     </button>
                 </li>
             </ul>
@@ -26,7 +34,7 @@
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <button type="submit" class="btn btn2">Login</button>
-                    <button type="submit" class="btn">Sign up</button>
+                    <button type="submit" class="btn" data-toggle="modal" data-target="#registerModal">Sign up</button>
                 </form>
             </div>
         </div>
@@ -44,17 +52,55 @@
     </div>
 </section>
 
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle" aria-hidden="true">
+<div class="modal fade" id="handymanModal" tabindex="-1" role="dialog" aria-labelledby="handymanModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="registerModalTitle">Sign up</h5>
+                <h5 class="modal-title" id="handymanModalTitle">Handyman Sign-Up</h5>
             </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group">
+                        <label for="exampleInputEmail1">Your name</label>
+                        <input type="text" class="form-control" placeholder="First">
+                        <input type="text" class="form-control" placeholder="Last">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Business name</label>
+                        <input type="text" class="form-control" placeholder="Business name">
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password-login" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn" id="signup">Create Account</button>
+                    <label class="login-instead">Already have an account?</label>
+                    <button type="submit" class="btn btn2" id="login">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customerModalTitle">Customer Sign-Up</h5>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email-login" aria-describedby="emailHelp" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
