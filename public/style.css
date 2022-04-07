@@ -148,3 +148,14 @@ button {
     flex-direction: column;
     padding: 1px;
 }
+
+.card{
+    justify-content: center;
+    text-align: center;
+    background-color: var(--lighter);
+}
+
+.card-head{
+    background-color: var(--darker);
+    color: white;
+}

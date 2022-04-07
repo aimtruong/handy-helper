@@ -14,19 +14,10 @@ router.get('/', async (req, res) => {
             }
         });
 
-        const response2 = await NewListing.findAll({
-            attributes: ['id', 'title', 'post_content', 'price', 'created_at'],
-            include: {
-                model: Handyman,
-                attributes: ['id', 'firstName', 'lastName', 'email']
-            }
-        });
-
-        if(response && response2) {
+        if(response) {
             const handymans = response.get({ plain: true });
-            const listings = response2.map(listing => listing.get({ plain: true }));
-            
-            res.render('dash-hand', { handymans, listings, loggedIn: true });
+
+            res.render('dash-hand', { handymans, loggedIn: true });
         } else {
             res.status(500).json({ message: 'there was an error rendiring the page' });
         }

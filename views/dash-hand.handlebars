@@ -35,17 +35,5 @@
     </form>
     </div>
 </section>
-
-<section>
-    {{#if listings.length}}
-        <h3 class="feature container"> Featured Projects</h3>
-        <div class="featured row">
-                {{#each (limit listings 4) as |listing|}}
-                        {{> listing-details listing}}
-                {{/each}}
-        </div>
-    {{/if}}
-    </div>
-</section>
 <script src="/javascript/logout.js"></script>
 <script src="/javascript/newListing.js"></script>
