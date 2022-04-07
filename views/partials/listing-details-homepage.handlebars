@@ -1,0 +1,10 @@
+<article class = "col-md-2 card">
+    <section class="card">
+        <h3 class = 'card-head featured-title'>{{businessName}}</h3>
+
+        {{#each (limit newListings 1) as |newListings|}}
+            <p>{{newListings.title}}</p>
+            <p>{{newListings.post_content}}</p>
+        {{/each}}
+    </section>
+</article>

@@ -80,18 +80,23 @@ router.post("/", withAuthHan, (req, res) => {
         tagIds: req.body.tag_id,
         handyman_id: req.session.handyman_id
     */
-    NewListing.create(req.body)
+    NewListing.create({
+        title: req.body.title,
+        post_content: req.body.post_content,
+        price: req.body.price,
+        handyman_id: req.session.handyman_id
+    })
     .then((listing) => {
         // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-        if (req.body.tagIds.length) {
-          const NewListingIdArr = req.body.tagIds.map((tag_id) => {
-            return {
-              listing_id: listing.id,
-              tag_id,
-            };
-          });
-          return ListingTag.bulkCreate(NewListingIdArr);
-        }
+        // if (req.body.tagIds.length) {
+        //   const NewListingIdArr = req.body.tagIds.map((tag_id) => {
+        //     return {
+        //       listing_id: listing.id,
+        //       tag_id,
+        //     };
+        //   });
+        //   return ListingTag.bulkCreate(NewListingIdArr);
+        // }
         // if no product tags, just respond
         res.status(200).json(listing);
     })
