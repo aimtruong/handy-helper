@@ -8,7 +8,7 @@ const profileRoutes = require("./profile-routes.js");
 const listingRoutes = require("./listing-routes.js");
 const messageRoutes = require("./messaging-route.js")
 
-// router.use("/api", apiRoutes);
+router.use("/api", apiRoutes);
 router.use("/", homeRoutes);
 //router.use("/dashboard", dashboardRoutes);
 //router.use("/profile", profileRoutes);

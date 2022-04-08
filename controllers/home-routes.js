@@ -2,6 +2,7 @@ const router = require("express").Router();
 const sequelize = require("../config/connection.js");
 const { Handyman, NewListing } = require("../models");
 
+<<<<<<< HEAD
 
 // GET all routes for homepage
 router.get('/', (req, res) => {
@@ -20,6 +21,25 @@ router.get('/', (req, res) => {
             res.render('homepage', { 
                 handymans
 
+=======
+const router = require("express").Router();
+const sequelize = require("../config/connection.js");
+const { Handyman, NewListing } = require("../models");
+
+
+// GET all routes for homepage
+router.get('/', (req, res) => {
+    Handyman.findAll({
+        attributes: [
+            
+        ]
+    })
+        .then(dbData => {
+            const data = dbData.map(data => data.get({ plain: true }));
+    
+            res.render('homepage', { 
+                data
+>>>>>>> f4874035cfa754e539706cf7d61b2e5de7107d4a
             });
         })
         .catch(err => {

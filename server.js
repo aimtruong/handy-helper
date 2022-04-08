@@ -46,6 +46,7 @@ app.use('/', messaging)
 
 app.use(routes);
 
+<<<<<<< HEAD
 sequelize.sync({ force: true }).then(() => {
   server.listen(PORT, () => console.log('Now listening'));
 });
@@ -80,3 +81,8 @@ io.on('connection', socket => {
 
 
 
+=======
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
+>>>>>>> f4874035cfa754e539706cf7d61b2e5de7107d4a

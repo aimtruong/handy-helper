@@ -5,7 +5,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+<<<<<<< HEAD
     "devStart": "nodemon server.js"
+=======
+    "seed": "node seeds/index.js"
+>>>>>>> f4874035cfa754e539706cf7d61b2e5de7107d4a
   },
   "repository": {
     "type": "git",
@@ -28,6 +32,7 @@
     "express-session": "^1.17.2",
     "jquery": "^3.6.0",
     "mysql2": "^2.3.3",
+<<<<<<< HEAD
     "prettier": "^2.6.1",
     "sequelize": "^6.17.0",
     "socket.io": "^4.4.1"
@@ -35,5 +40,10 @@
   "description": "",
   "devDependencies": {
     "nodemon": "^2.0.15"
+=======
+    "nodemon": "^2.0.15",
+    "prettier": "^2.6.1",
+    "sequelize": "^6.17.0"
+>>>>>>> f4874035cfa754e539706cf7d61b2e5de7107d4a
   }
 }
