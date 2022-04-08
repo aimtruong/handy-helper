@@ -1,7 +1,7 @@
 
 const router = require('express').Router();
 const { Review, Handyman, Customer } = require("../../models");
-const withAuth = require("../../utils/auth");
+const withAuthCus = require("../../utils/authCus");
 
 // GET all reviews
 router.get("/", (req, res) => {
@@ -69,7 +69,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST a review
-router.post("/", /* withAuth, */ (req, res) => {
+router.post("/",  withAuthCus, (req, res) => {
     Review.create({
         title: req.body.title,
         review_text: req.body.review_text,
@@ -84,7 +84,7 @@ router.post("/", /* withAuth, */ (req, res) => {
 });
 
 // PUT a review
-router.put("/:id", /* withAuth, */ (req, res) => {
+router.put("/:id",  withAuthCus,  (req, res) => {
     Review.update(
         {
             title: req.body.title,
@@ -110,7 +110,7 @@ router.put("/:id", /* withAuth, */ (req, res) => {
 });
 
 // DELETE a review
-router.delete("/:id", /* withAuth, */ (req,res) => {
+router.delete("/:id", withAuthCus, (req,res) => {
     Review.destroy({
         where: {
             id: req.params.id

@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class Review extends Model {}
 
 Review.init(
+    // columns
     {
         id: {
             type: DataTypes.INTEGER,

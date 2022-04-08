@@ -25,7 +25,7 @@
 
 
 ## First Look
-
+<img src= 'assets/images/first-look.JPG'>
 
 ## Website
 

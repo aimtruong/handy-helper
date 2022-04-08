@@ -1,7 +1,7 @@
 
 const router = require('express').Router();
 const { Handyman, NewListing, Tag, ListingTag } = require("../../models");
-const withAuth = require("../../utils/auth");
+const withAuthHan = require("../../utils/authHan");
 
 // GET all listings
 router.get("/", (req, res) => {
@@ -72,7 +72,7 @@ router.get("/:id", (req, res) => {
 });
 
 // POST a new listing
-router.post("/", /* withAuth, */ (req, res) => {
+router.post("/", withAuthHan, (req, res) => {
     /* should look like...
         title: req.body.title,
         post_content: req.body.post_content,
@@ -108,7 +108,7 @@ router.post("/", /* withAuth, */ (req, res) => {
 });
 
 // PUT a listing
-router.put("/:id", /* withAuth, */ (req, res) => {
+router.put("/:id", withAuthHan, (req, res) => {
     NewListing.update(
         {
             title: req.body.title,
@@ -135,7 +135,7 @@ router.put("/:id", /* withAuth, */ (req, res) => {
 });
 
 // DELETE a listing
-router.delete("/:id", /* withAuth, */ (req,res) => {
+router.delete("/:id", withAuthHan, (req,res) => {
     NewListing.destroy({
         where: {
             id: req.params.id

@@ -1,11 +1,11 @@
 
 const router = require("express").Router();
-const { Review, Handyman, Customer, Specialty } = require("../models");
-const withAuth = require("../utils/auth");
+const { Review, Handyman, Customer, Specialty, NewListing } = require("../models");
+const withAuthHan = require("../utils/authHan");
 
 // GET all reviews in profile
-router.get("/", /* withAuth, */ (req, res) => {
-    Handyman.findOne({
+router.get("/", (req, res) => {
+    Handyman.findAll({
         where: {
             id: req.session.handyman_id
         },
@@ -22,6 +22,14 @@ router.get("/", /* withAuth, */ (req, res) => {
                 attributes: ["id", "title"]
             },
             {
+                model: NewListing,
+                attributes: ["id", "title", "post_content", "price", "created_at"],
+                include: {
+                    model: Handyman,
+                    attributes: ["firstName", "lastName"]
+                }
+            },
+            {
                 model: Review,
                 attributes: [ "id", "title", "review_text" ],
                 include: {
@@ -31,12 +39,15 @@ router.get("/", /* withAuth, */ (req, res) => {
             }
         ]
     })
-        .then(dbReviewsData => {
-            // res.json(dbReviewsData);
-            // serialize data before passing to template
-            // const reviews = dbReviewsData.map(reviews => reviews.get({ plain: true }));
-            const reviews = dbReviewsData;
-            res.render('profile', { reviews, loggedIn: true });
+        .then(dbHandyData => {
+            const handymans = dbHandyData.map(handyman => handyman.get({ plain: true }));
+            const listings = handymans.filter(({listing}) => listing);
+            //res.json(handymans);
+            //res.json(listings);
+            res.render('profile', { 
+                handymans,
+                listings
+            });
         })
         .catch(err => {
             console.log(err);
@@ -45,9 +56,10 @@ router.get("/", /* withAuth, */ (req, res) => {
 });
 
 // GET a bio to edit
-router.get("/edit/:id", /* withAuth, */ (req, res) => {
+router.get("/edit/:id", withAuthHan,  (req, res) => {
     Handyman.findByPk(req.params.id, {
         attributes: [
+            'speciality',
             'bio'
         ]
       })

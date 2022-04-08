@@ -4,6 +4,7 @@ const sequelize = require('../config/connection');
 class Profile_upvote extends Model {} 
 
 Profile_upvote.init(
+    // columns
     {
         id: {
             type: DataTypes.INTEGER,
