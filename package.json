@@ -1,11 +1,12 @@
 {
   "name": "handy-helper",
   "version": "1.0.0",
-  "description": "",
+  "description": "AS A property owner, I WANT a website where I can browse multiple construction services to get my projects done\r     SO THAT I can have a better property",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "devStart": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
   "repository": {
@@ -27,8 +28,11 @@
     "express-handlebars": "^6.0.3",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
-    "nodemon": "^2.0.15",
     "prettier": "^2.6.1",
-    "sequelize": "^6.17.0"
+    "sequelize": "^6.17.0",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
