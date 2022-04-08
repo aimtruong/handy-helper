@@ -1,20 +1,9 @@
 
 
-{{!-- <article class = "col-md-2 card">
-    <section>
-        <h3 class = 'featured-title'>{{businessName}}</h3>
-
-        {{#each (limit newListings 1) as |newListings|}}
-            <a href = "/profile/{{id}}">{{newListings.title}}</a>
-            <p>{{newListings.post_content}}</p>
-        {{/each}}
-    </section>
-</article> --}}
-
 <article class="col-md-12 card">
     <section>
-        <h3 class="featured-title">{{handyman.firstName}}</h3>
-        <p>{{title}}</p>
+        <h3 class="featured-title">{{title}} posted on {{format_date created_at}}</h3>
+        <!-- <a href = '/profile/{{handyman}}'></a> !-->
         <p>{{post_content}}</p>
         <p>{{price}}</p>
     </section>

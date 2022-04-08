@@ -4,8 +4,8 @@ const { Review, Handyman, Customer, Specialty, NewListing } = require("../models
 const withAuthHan = require("../utils/authHan");
 
 // GET all reviews in profile
-router.get("/", withAuthHan,  (req, res) => {
-    Handyman.findOne({
+router.get("/", (req, res) => {
+    Handyman.findAll({
         where: {
             id: req.session.handyman_id
         },
@@ -23,7 +23,11 @@ router.get("/", withAuthHan,  (req, res) => {
             },
             {
                 model: NewListing,
-                attributes: ["id", "title", "post_content", "price", "created_at"]
+                attributes: ["id", "title", "post_content", "price", "created_at"],
+                include: {
+                    model: Handyman,
+                    attributes: ["firstName", "lastName"]
+                }
             },
             {
                 model: Review,
@@ -35,12 +39,15 @@ router.get("/", withAuthHan,  (req, res) => {
             }
         ]
     })
-        .then(dbReviewsData => {
-            // res.json(dbReviewsData);
-            // serialize data before passing to template
-            // const reviews = dbReviewsData.map(reviews => reviews.get({ plain: true }));
-            const reviews = dbReviewsData;
-            res.render('profile', { reviews, loggedIn: true });
+        .then(dbHandyData => {
+            const handymans = dbHandyData.map(handyman => handyman.get({ plain: true }));
+            const listings = handymans.filter(({listing}) => listing);
+            //res.json(handymans);
+            //res.json(listings);
+            res.render('profile', { 
+                handymans,
+                listings
+            });
         })
         .catch(err => {
             console.log(err);
@@ -52,6 +59,7 @@ router.get("/", withAuthHan,  (req, res) => {
 router.get("/edit/:id", withAuthHan,  (req, res) => {
     Handyman.findByPk(req.params.id, {
         attributes: [
+            'speciality',
             'bio'
         ]
       })

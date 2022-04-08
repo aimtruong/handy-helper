@@ -25,9 +25,11 @@
                         </button>
                         {{/if}}
                       </div>
+
+{{#each handymans as |handyman|}}
                       <div class="ms-3" style="margin: 130px 0 0 130px;">
-                        <h5>Handyman Stan</h5>
-                        <p>Northern California</p>
+                        <h5>{{firstName}} {{lastName}}</h5>
+                        <p>{{businessName}}</p>
                       </div>
                     </div>
                     <div class="p-4 text-black" style="background-color: #f8f9fa;">
@@ -39,8 +41,8 @@
                       <div class="mb-5">
                         <p class="lead fw-normal mb-1" style="margin-top: 35px;">About</p>
                         <div class="p-4" style="background-color: #f8f9fa;">
-                          <p class="font-italic mb-1">Lawn mower</p>
-                          <p class="font-italic mb-1">Leaf blower</p>
+                          <p class="font-italic mb-1">Specialty: {{Specialty}}</p>
+                          <p class="font-italic mb-1">Bio: {{Bio}}</p>
                         </div>
                       </div>
                     </div>
@@ -48,8 +50,18 @@
                 </div>
               </div>
             </div>
+            
+              <section class = "listing-list">
+                {{#each handyman.newListings as |newListing|}}
+                  {{> listing-details newlisting}}
+                {{/each}}
+              </section>
+{{/each}}
+
         </section>
     </section>
+
+
 
     <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
