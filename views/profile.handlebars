@@ -52,8 +52,14 @@
             </div>
             
               <section class = "listing-list">
-                {{#each handyman.newListings as |newListing|}}
-                  {{> listing-details newlisting}}
+                {{#each newListings}}
+                  <a href = "/listing/edit/{{id}}" class="col-md-12 card">
+                    <section>
+                      <h3 class="featured-title">{{title}} posted on {{format_date created_at}}</h3>
+                      <p>{{post_content}}</p>
+                      <p>{{price}}</p>
+                    </section>
+                  </a>
                 {{/each}}
               </section>
 {{/each}}

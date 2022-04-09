@@ -1,0 +1,22 @@
+                <li>
+                    <a href="/dashboard">Return to dashboard</a>
+                </li>
+                <li>
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+                        Logout
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<article class="col-md-12 card">
+    <section>
+        <h3 class="featured-title">{{title}}</h3>
+        
+        <p>Posted by {{handyman.firstName}} {{handyman.lastName}} on {{format_date created_at}}</p>
+        <p>{{post_content}}</p>
+        <p>{{price}}</p>
+    </section>
+</article>
+
