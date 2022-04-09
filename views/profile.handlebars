@@ -15,7 +15,7 @@
             <div class="container py-5 h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col col-lg-9 col-xl-7">
-                  <div class="card">
+                  <div class="bio-card">
                     <div class="rounded-top text-white d-flex flex-row" style="background-color: var(--dark); height:200px;">
                       <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
                         <img src="../html-templates/img/placeholder.jpg" class="img-fluid img-thumbnail mt-4 mb-2" style="margin-left: 65px; width: 150px; z-index: 1 ">
@@ -50,24 +50,22 @@
                 </div>
               </div>
             </div>
-            
+        </section>
+    </section>
+
               <section class = "listing-list">
                 {{#each newListings}}
                   <a href = "/listing/edit/{{id}}" class="col-md-12 card">
                     <section>
-                      <h3 class="featured-title">{{title}} posted on {{format_date created_at}}</h3>
+                      <h3 class=" card-head featured-title">{{title}}</h3>
                       <p>{{post_content}}</p>
                       <p>{{price}}</p>
+                      <p id = 'post-date'>posted on {{format_date created_at}}</p>
                     </section>
                   </a>
                 {{/each}}
               </section>
 {{/each}}
-
-        </section>
-    </section>
-
-
 
     <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
