@@ -6,6 +6,7 @@ module.exports = {
         date
       ).getFullYear()}`;
     },
+
     // format words to where it become plural if more than one
     format_plural: (word, amount) => {
       if (amount !== 1) {
@@ -14,6 +15,7 @@ module.exports = {
   
       return word;
     },
+
     // limit project cards to a certain number to display
     limit: function(arr,limit) {
       if (!Array.isArray(arr)) { return []; }

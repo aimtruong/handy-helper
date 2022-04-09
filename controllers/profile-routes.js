@@ -41,12 +41,9 @@ router.get("/", (req, res) => {
     })
         .then(dbHandyData => {
             const handymans = dbHandyData.map(handyman => handyman.get({ plain: true }));
-            //const listings = handymans.filter(({listing}) => listing);
             //res.json(handymans);
-            //res.json(listings);
             res.render('profile', { 
                 handymans,
-            //    listings
             });
         })
         .catch(err => {
@@ -82,23 +79,28 @@ router.get("/bio/edit/:id", withAuthHan,  (req, res) => {
 });
 
 // GET a listing to edit
-router.get("/listing/edit/:id", withAuthHan,  (req, res) => {
-    Handyman.findByPk(req.params.id, {
+router.get("/listing/edit/:id", (req, res) => {
+    NewListing.findByPk(req.params.id, {
         attributes: [
             'id',
             'title',
             'post_content',
             'price',
             'created_at'
+        ],
+        include: [
+            {
+            model: Handyman,
+            attributes: ['id', 'firstName', 'lastName']
+            }
         ]
       })
         .then(dbListingData => {
             if (dbListingData) {
                 const listing = dbListingData.get({ plain: true });
-                
+                //res.json(listing);
                 res.render('single-listing', {
-                    listing,
-                    loggedIn: true
+                    listing
                 });
             }
             else {

@@ -12,11 +12,12 @@
 
 <article class="col-md-12 card">
     <section>
-        <h3 class="featured-title">{{title}}</h3>
         
-        <p>Posted by {{handyman.firstName}} {{handyman.lastName}} on {{format_date created_at}}</p>
-        <p>{{post_content}}</p>
-        <p>{{price}}</p>
+        <h3 class="featured-title">{{NewListings.title}}</h3>
+        <p>Posted by {{newListings.handyman.firstName}} {{NewListings.handyman.lastName}} on {{format_date NewListings.created_at}}
+        </p>
+        <p>{{NewListings.post_content}}</p>
+        <p>{{NewListings.price}}</p>
+        
     </section>
 </article>
-
