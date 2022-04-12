@@ -41,12 +41,9 @@ router.get("/", (req, res) => {
     })
         .then(dbHandyData => {
             const handymans = dbHandyData.map(handyman => handyman.get({ plain: true }));
-            const listings = handymans.filter(({listing}) => listing);
             //res.json(handymans);
-            //res.json(listings);
             res.render('profile', { 
                 handymans,
-                listings
             });
         })
         .catch(err => {
@@ -56,7 +53,7 @@ router.get("/", (req, res) => {
 });
 
 // GET a bio to edit
-router.get("/edit/:id", withAuthHan,  (req, res) => {
+router.get("/bio/edit/:id", withAuthHan,  (req, res) => {
     Handyman.findByPk(req.params.id, {
         attributes: [
             'speciality',
@@ -67,9 +64,43 @@ router.get("/edit/:id", withAuthHan,  (req, res) => {
             if (dbBioData) {
                 const bio = dbBioData.get({ plain: true });
                 
-                res.render('edit-profile', {
+                res.render('edit-bio', {
                     bio,
                     loggedIn: true
+                });
+            }
+            else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
+
+// GET a listing to edit
+router.get("/listing/edit/:id", (req, res) => {
+    NewListing.findByPk(req.params.id, {
+        attributes: [
+            'id',
+            'title',
+            'post_content',
+            'price',
+            'created_at'
+        ],
+        include: [
+            {
+            model: Handyman,
+            attributes: ['id', 'firstName', 'lastName']
+            }
+        ]
+      })
+        .then(dbListingData => {
+            if (dbListingData) {
+                const listing = dbListingData.get({ plain: true });
+                //res.json(listing);
+                res.render('single-listing', {
+                    listing
                 });
             }
             else {
