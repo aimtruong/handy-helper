@@ -4,7 +4,7 @@ const router = express.Router()
 const path = require('path')
 
 router.get('/', (req,res) => {
-    res.sendFile(path.resolve('./public/messaging.html')) 
+    res.render('messenger') 
 })
 
 // router.get('*', (req, res) => {           //return index.html 
